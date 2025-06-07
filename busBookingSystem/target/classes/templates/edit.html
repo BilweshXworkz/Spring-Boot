@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Update Booking</title>
+</head>
+<body>
+<h2 th:text="${save.id != null} ? 'Update Booking' : 'Register New Booking'">Booking</h2>
+
+<form th:action="@{/update}" th:object="${save}" method="post">
+    <input type="hidden" th:field="*{id}" />
+
+    <label>Name:</label>
+    <input type="text" th:field="*{name}" /><br/>
+
+    <label>Pick Up:</label>
+    <input type="text" th:field="*{pickUp}" /><br/>
+
+    <label>Drop:</label>
+    <input type="text" th:field="*{dropLocation}" /><br/>
+
+    <label>Ticket Price:</label>
+    <input type="text" th:field="*{ticketPrice}" /><br/>
+
+    <button type="submit">Update</button>
+</form>
+</body>
+</html>
